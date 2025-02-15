@@ -8,7 +8,6 @@ This is a simple library management system built with Node.js, Express, and Mong
 - [Usage](#usage)
 - [API Endpoints](#api-endpoints)
 - [Environment Variables](#environment-variables)
-- [License](#license)
 
 ## Installation
 
@@ -74,6 +73,8 @@ PORT=5000
 JWT_SECRET=your_secret_key
 ```
 
-Postman collection is also added.
+###### Postman collection is also added.
+```
 libraryUrl = localhost:5000 (or as per your change)
 libraryToken = token after being logged in (get it in login response)
+```
