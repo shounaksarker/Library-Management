@@ -1,0 +1,243 @@
+{
+	"info": {
+		"_postman_id": "162828a2-d144-455c-bcb5-3df035266585",
+		"name": "Library",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "32659885"
+	},
+	"item": [
+		{
+			"name": "Signup",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Shounak sarker\", \n    \"email\": \"shounak2@gmail.com\", \n    \"password\": \"ShounakPassowrd\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{libraryUrl}}/api/user/register"
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"shounak@gmail.com\", \n    \"password\": \"ShounakPassowrd\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{libraryUrl}}/api/user/login"
+			},
+			"response": []
+		},
+		{
+			"name": "Books",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{libraryToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{libraryUrl}}/api/books"
+			},
+			"response": []
+		},
+		{
+			"name": "Filtered Books",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{libraryToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{libraryUrl}}/api/books/filtered?borrowedCount=2&author=shounak",
+					"host": [
+						"{{libraryUrl}}"
+					],
+					"path": [
+						"api",
+						"books",
+						"filtered"
+					],
+					"query": [
+						{
+							"key": "borrowedCount",
+							"value": "2"
+						},
+						{
+							"key": "author",
+							"value": "shounak"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Book",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{libraryToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Learn Express\", \n    \"author\": \"Shounak\",\n    \"totalCopies\": 4, \n    \"genre\": \"Development\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{libraryUrl}}/api/books/add"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrow Book",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{libraryToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"bookId\": \"67b0c6631cf5db81a483ad95\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{libraryUrl}}/api/loans/borrow"
+			},
+			"response": []
+		},
+		{
+			"name": "Book Loan List",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{libraryToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{libraryUrl}}/api/loans/my-loans"
+			},
+			"response": []
+		},
+		{
+			"name": "Return Book",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{libraryToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"loanId\": \"67b0e6e537b98f24c5f7b8a3\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{libraryUrl}}/api/loans/return"
+			},
+			"response": []
+		}
+	]
+}
