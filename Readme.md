@@ -25,13 +25,14 @@ This is a simple library management system built with Node.js, Express, and Mong
     npm install
     ```
 
-3. Create a [.env](http://_vscodecontentref_/0) file in the root directory and add your environment variables. You can use the [.env.example](http://_vscodecontentref_/1) file as a reference.
+3. Create a ```.env``` file in the root directory and add your environment variables. You can use the ```.env.example``` file as a reference.
 
 4. Start the development server:
 
-    
-```sh    npm run dev
+    ```sh
+    npm run dev
     ```
+
 
 ## Usage
 
@@ -65,13 +66,10 @@ This is a simple library management system built with Node.js, Express, and Mong
 
 The following environment variables are required:
 
-- [MONGODB_URI](http://_vscodecontentref_/2) - MongoDB connection string
-- [PORT](http://_vscodecontentref_/3) - Port number for the server
-- [JWT_SECRET](http://_vscodecontentref_/4) - Secret key for JWT
-
-Example [.env](http://_vscodecontentref_/5) file:
+Example
 
 ```env
 MONGODB_URI=mongodb+srv://<USER>:<PASSWORD>@<CLUSTER>/<DB_NAME>?retryWrites=true&w=majority
 PORT=5000
 JWT_SECRET=your_secret_key
+```
