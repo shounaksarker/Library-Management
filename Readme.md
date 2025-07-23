@@ -14,8 +14,8 @@ This is a simple library management system built with Node.js, Express, and Mong
 1. Clone the repository:
 
     ```sh
-    git clone https://github.com/your-username/library-samp.git
-    cd library-samp
+    git clone https://github.com/shounaksarker/Library-Management.git
+    cd Library-Management
     ```
 
 2. Install the dependencies:
